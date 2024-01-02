@@ -2,7 +2,7 @@ from datetime import datetime
 
 from fastapi import FastAPI
 from pydantic import BaseModel
-
+import uvicorn
 from src.model_deployment import model_predict
 
 
@@ -37,6 +37,5 @@ def predict(data: Input):
 
 
 if __name__ == "__main__":
-    import uvicorn
 
     uvicorn.run(app, host="127.0.0.1", port=8000)

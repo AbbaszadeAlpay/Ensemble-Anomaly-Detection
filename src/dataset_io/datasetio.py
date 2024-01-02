@@ -16,16 +16,16 @@ class DatasetIO:
 
     """This class implements the Dataset IO class."""
 
-    def __init__(self, DATA_PATH):
-        self.DATA_PATH = DATA_PATH
-        self.extension = os.path.splitext(self.DATA_PATH)[-1]
+    def __init__(self, data_path):
+        self.data_path = data_path
+        self.extension = os.path.splitext(self.data_path)[-1]
         self.__validate_extensions()
 
     def __validate_extensions(self):
         """Validate the extension."""
 
-        if not isinstance(self.DATA_PATH, str):
-            raise TypeError(f"Expected data_path as str, found {type(self.DATA_PATH)}")
+        if not isinstance(self.data_path, str):
+            raise TypeError(f"Expected data_path as str, found {type(self.data_path)}")
 
         if self.extension not in ALLOWED_EXTENSIONS:
             raise ValueError(f"File extension is not supported. found {self.extension}")
@@ -39,6 +39,6 @@ class DatasetIO:
             raise ValueError(f"Received unsuported extension, found {self.extension}")
 
         else:
-            data = read_func(self.DATA_PATH)
+            data = read_func(self.data_path)
 
         return data

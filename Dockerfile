@@ -8,7 +8,7 @@ RUN poetry config virtualenvs.create false
 
 COPY pyproject.toml /app/
 
-RUN poetry install --with main
+RUN poetry install
 
 COPY . /app
 
