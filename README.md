@@ -63,7 +63,7 @@ By executing these steps sequentially, you will import the necessary modules, re
 
 ## API Usage
 ```bash
-uvicorn src.model_training.api:app
+uvicorn src.model_deployment.api:app
 ```
 ```bash
 http://127.0.0.1:8000/docs#/default/predict_predict_post
